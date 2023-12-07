@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat } from "next/font/google";
 import "./globals.css";
-
-const caveat = Caveat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Harmony Heights",
@@ -16,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${caveat.className} antialiased`}>{children}</body>
+      <body className="min-w-[400px]">{children}</body>
     </html>
   );
 }
