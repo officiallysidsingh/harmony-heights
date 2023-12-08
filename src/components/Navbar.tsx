@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 // Font Import
 import { Ephesis } from "next/font/google";
 
@@ -7,8 +11,39 @@ const ephesis = Ephesis({
 });
 
 export default function Navbar() {
+  const [show, setShow] = useState("top");
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 270) {
+      if (window.scrollY > lastScrollY) {
+        setShow("hide");
+      } else {
+        setShow("show");
+      }
+      setLastScrollY(window.scrollY);
+    } else {
+      setShow("top");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   return (
-    <div className="fixed z-50 w-full text-slate-100 backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black">
+    <div
+      className={`fixed z-50 w-full text-slate-100 transition-all ease-in-out duration-500 ${show === "top"
+          ? ""
+          : show === "show"
+            ? "backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black"
+            : "-translate-y-20"
+        }`}
+    >
       <div className="flex justify-between items-center pt-2 pb-1 px-6 md:px-12">
         <div className={`flex flex-col ${ephesis.className} antialiased`}>
           <h2 className="text-2xl md:text-3xl font-bold text-action">
