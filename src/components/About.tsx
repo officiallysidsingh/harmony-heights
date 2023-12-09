@@ -1,5 +1,5 @@
 // Image Import
-import AboutImage from "../public/luxury-room.jpg";
+import AboutImage from "@/public/luxury-room.jpg";
 
 // Font Import
 import { Satisfy } from "next/font/google";

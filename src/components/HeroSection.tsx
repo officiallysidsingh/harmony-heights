@@ -1,5 +1,5 @@
 // Image Import
-import HeroImage from "../public/entrance.jpg";
+import HeroImage from "@/public/entrance.jpg";
 
 // Font Imports
 import { Courgette } from "next/font/google";
