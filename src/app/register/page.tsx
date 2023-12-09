@@ -46,6 +46,11 @@ export default function Signup() {
     if (res.status === "OK") {
       // Successful response
       toast.success(res.message);
+
+      // Clearing Out Form Data On Submit
+      setName("");
+      setEmail("");
+      setPassword("");
     } else {
       // Unsuccessful response
       toast.error(res.message);
