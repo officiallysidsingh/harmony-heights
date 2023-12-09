@@ -14,6 +14,7 @@ import { Parisienne } from "next/font/google";
 
 // Notification Toast Import
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const parisienne = Parisienne({
   subsets: ["latin"],
@@ -26,6 +27,8 @@ export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,10 +50,13 @@ export default function Signup() {
       // Successful response
       toast.success(res.message);
 
-      // Clearing Out Form Data On Submit
+      // Clearing out form data on submit
       setName("");
       setEmail("");
       setPassword("");
+
+      // Going to login page
+      router.push("/login");
     } else {
       // Unsuccessful response
       toast.error(res.message);
