@@ -1,4 +1,4 @@
-"use server";
+import { NextResponse } from "next/server";
 
 // Firebase Import
 import { database } from "@/config/firebase";
@@ -14,15 +14,13 @@ import {
 // Auth Import
 import bcrypt from "bcrypt";
 
-export default async function registerUser(
-  name: string,
-  email: string,
-  password: string,
-) {
+export async function POST(req: Request) {
+  const { name, email, password } = await req.json();
+
   try {
     // Check if all fields are filled
     if (!name || !email || !password) {
-      throw new Error("Please fill all the fields");
+      throw new Error("Please fill all the fields!");
     }
 
     // Check if the user already exists
@@ -47,10 +45,19 @@ export default async function registerUser(
       password: hashedPassword,
     });
 
-    console.log("Document written with ID: ", user.id);
-    return true;
+    if (!user) {
+      throw new Error("An Unexpected Error Occurred!");
+    }
+
+    return NextResponse.json({
+      message: "User Registration Successful",
+      status: "OK",
+    });
   } catch (err: any) {
-    console.log("Error: ", err.message);
-    return err.message;
+    console.log("Error: ", err);
+    return NextResponse.json({
+      message: err.message,
+      status: "ERROR",
+    });
   }
 }
