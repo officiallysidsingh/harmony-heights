@@ -6,16 +6,21 @@ import Link from "next/link";
 // Image Import
 import RegisterImage from "../../public/login-register-bg.png";
 
-// Server Action Import
-import registerUser from "@/server-actions/register";
+// Backend Import
+import axios from "axios";
 
 // Font Import
 import { Parisienne } from "next/font/google";
+
+// Notification Toast Import
+import { toast } from "sonner";
 
 const parisienne = Parisienne({
   subsets: ["latin"],
   weight: "400",
 });
+
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -25,11 +30,25 @@ export default function Signup() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const registered: boolean = await registerUser(name, email, password);
-    if (registered === true) {
-      console.log("User Registered Successfully");
+    // Notification Toast
+    // Loading State
+    toast.loading("Loading....");
+
+    const res = await axios
+      .post("/user/register", {
+        name,
+        email,
+        password,
+      })
+      .then((res) => res.data);
+
+    // Notification Toast
+    if (res.status === "OK") {
+      // Successful response
+      toast.success(res.message);
     } else {
-      console.log("Error: ", registered);
+      // Unsuccessful response
+      toast.error(res.message);
     }
   };
 
