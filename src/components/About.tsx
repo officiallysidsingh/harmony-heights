@@ -2,12 +2,7 @@
 import AboutImage from "@/public/luxury-room.jpg";
 
 // Font Import
-import { Satisfy } from "next/font/google";
-
-const satisfy = Satisfy({
-  subsets: ["latin"],
-  weight: "400",
-});
+import { courgette } from "@/ui/fonts";
 
 export default function About() {
   return (
@@ -21,7 +16,7 @@ export default function About() {
       <div className="h-52 md:h-[38rem] w-3/4 md:w-1/2 flex flex-col md:justify-center">
         <div className="md:pr-10">
           <h1
-            className={`${satisfy.className} antialiased text-3xl md:text-7xl font-bold pb-2 md:pb-6`}
+            className={`${courgette.className} antialiased text-3xl md:text-7xl font-bold pb-2 md:pb-6`}
           >
             About Us
           </h1>

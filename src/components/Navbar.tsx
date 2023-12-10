@@ -3,16 +3,13 @@
 import { useState, useEffect } from "react";
 
 // Font Import
-import { Ephesis } from "next/font/google";
+import { ephesis } from "@/ui/fonts";
+
+// Router Import
 import Link from "next/link";
 
 // Next Auth Import
 import { signOut } from "next-auth/react";
-
-const ephesis = Ephesis({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export default function Navbar({ buttonType }: { buttonType: string }) {
   const [show, setShow] = useState("top");

@@ -17,12 +17,7 @@ import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 
 // Font Import
-import { Parisienne } from "next/font/google";
-
-const parisienne = Parisienne({
-  subsets: ["latin"],
-  weight: "400",
-});
+import { parisienne } from "@/ui/fonts";
 
 export default function Login({ }) {
   const [email, setEmail] = useState("");

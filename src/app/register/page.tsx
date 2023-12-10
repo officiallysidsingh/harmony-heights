@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+
+// Router Import
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // Image Import
 import RegisterImage from "@/public/login-register-bg.jpg";
@@ -10,16 +13,10 @@ import RegisterImage from "@/public/login-register-bg.jpg";
 import axios from "axios";
 
 // Font Import
-import { Parisienne } from "next/font/google";
+import { parisienne } from "@/ui/fonts";
 
 // Notification Toast Import
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
-
-const parisienne = Parisienne({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_SERVER_URL;
 
