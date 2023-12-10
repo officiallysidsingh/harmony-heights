@@ -1,8 +1,11 @@
+"use client";
+
 // Image Import
 import HeroImage from "@/public/entrance.jpg";
 
 // Font Imports
 import { Courgette } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const courgette = Courgette({
   subsets: ["latin"],
@@ -10,6 +13,11 @@ const courgette = Courgette({
 });
 
 export default function HeroSection() {
+  const router = useRouter();
+
+  const handleBooking = () => {
+    router.push("/booking");
+  };
   return (
     <div className="bg-gray-800 flex h-72 md:h-[38rem] justify-center items-center flex-col">
       <div
@@ -28,7 +36,10 @@ export default function HeroSection() {
             Serenity&nbsp;and&nbsp;Sophistication
           </h3>
           <div className="pt-1 md:pt-2 pl-4 md:pl-10">
-            <div className="bg-action px-2 py-1 rounded-md cursor-pointer">
+            <div
+              onClick={handleBooking}
+              className="bg-action px-2 py-1 rounded-md cursor-pointer"
+            >
               <h3 className="text-black text-sm md:text-lg font-semibold">
                 Book Now
               </h3>
