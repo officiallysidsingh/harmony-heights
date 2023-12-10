@@ -6,7 +6,7 @@ import { courgette } from "@/ui/fonts";
 
 export default function About() {
   return (
-    <div className="w-full flex flex-col md:flex-row items-center py-5 md:py-10 gap-5 md:gap-0">
+    <div className="h-[32rem] md:h-[45rem] w-full flex flex-col md:flex-row items-center py-5 md:py-10 gap-5 md:gap-0">
       <div className="w-3/4 md:w-1/2 flex justify-center items-center">
         <div
           className="h-52 md:h-[38rem] w-full md:w-3/4 bg-cover bg-right bg-no-repeat rounded-lg"
