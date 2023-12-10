@@ -43,6 +43,7 @@ export async function POST(req: Request) {
       name,
       email,
       password: hashedPassword,
+      type: "customer",
     });
 
     if (!user) {
