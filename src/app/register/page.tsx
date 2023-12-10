@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 // Image Import
-import RegisterImage from "../../public/login-register-bg.png";
+import RegisterImage from "@/public/login-register-bg.jpg";
 
 // Backend Import
 import axios from "axios";
@@ -35,10 +35,10 @@ export default function Signup() {
 
     // Notification Toast
     // Loading State
-    toast.loading("Loading....");
+    const toastId = toast.loading("Loading....");
 
     const res = await axios
-      .post("/user/register", {
+      .post("/api/register", {
         name,
         email,
         password,
@@ -48,7 +48,9 @@ export default function Signup() {
     // Notification Toast
     if (res.status === "OK") {
       // Successful response
-      toast.success(res.message);
+      toast.success(res.message, {
+        id: toastId,
+      });
 
       // Clearing out form data on submit
       setName("");
@@ -59,7 +61,9 @@ export default function Signup() {
       router.push("/login");
     } else {
       // Unsuccessful response
-      toast.error(res.message);
+      toast.error(res.message, {
+        id: toastId,
+      });
     }
   };
 
