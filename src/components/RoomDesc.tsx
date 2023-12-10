@@ -32,28 +32,30 @@ export default function RoomDesc() {
             </h2>
             <div>
               <table className="table-fixed text-sm md:text-base">
-                <tr>
-                  <td className="p-2">
-                    <CiWifiOn className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">High Speed Wifi</td>
+                <tbody>
+                  <tr>
+                    <td className="p-2">
+                      <CiWifiOn className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">High Speed Wifi</td>
 
-                  <td className="p-2">
-                    <MdOutlineBed className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">Cozy Twin Single Beds</td>
-                </tr>
-                <tr>
-                  <td className="p-2">
-                    <PiMonitor className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">Flat Screen TV</td>
+                    <td className="p-2">
+                      <MdOutlineBed className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">Cozy Twin Single Beds</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2">
+                      <PiMonitor className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">Flat Screen TV</td>
 
-                  <td className="p-2">
-                    <BiDrink className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">Mini Bar Offerings</td>
-                </tr>
+                    <td className="p-2">
+                      <BiDrink className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">Mini Bar Offerings</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
@@ -90,28 +92,30 @@ export default function RoomDesc() {
             </h2>
             <div>
               <table className="table-fixed text-sm md:text-base">
-                <tr>
-                  <td className="p-2">
-                    <CiWifiOn className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">High Speed Wifi</td>
+                <tbody>
+                  <tr>
+                    <td className="p-2">
+                      <MdOutlineBed className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">Luxurious Double Bed</td>
 
-                  <td className="p-2">
-                    <MdOutlineBed className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">Luxurious Double Bed</td>
-                </tr>
-                <tr>
-                  <td className="p-2">
-                    <PiMonitor className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">Flat Screen TV</td>
+                    <td className="p-2">
+                      <CiWifiOn className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">High Speed Wifi</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2">
+                      <PiMonitor className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">Flat Screen TV</td>
 
-                  <td className="p-2">
-                    <BiDrink className="h-8 w-8" />
-                  </td>
-                  <td className="p-2">Mini Bar Offerings</td>
-                </tr>
+                    <td className="p-2">
+                      <BiDrink className="h-8 w-8" />
+                    </td>
+                    <td className="p-2">Mini Bar Offerings</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
