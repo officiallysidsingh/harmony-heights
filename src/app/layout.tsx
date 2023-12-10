@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
 
+// Next Auth Session Provider
+import AuthProvider from "@/context/NextAuthProvider/providers";
+
 export const metadata: Metadata = {
   title: "Harmony Heights",
   description: "A Simple Hotel Booking App",
@@ -25,7 +28,7 @@ export default function RootLayout({
             duration: 3000,
           }}
         />
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
