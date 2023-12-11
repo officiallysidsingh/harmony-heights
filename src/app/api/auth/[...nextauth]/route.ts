@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Next Auth Import
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -15,9 +16,7 @@ export const authOptions = {
       name: "credentials",
       credentials: {},
 
-      // @ts-ignore
       async authorize(credentials) {
-        // @ts-ignore
         const { email, password } = credentials;
 
         try {
@@ -63,7 +62,6 @@ export const authOptions = {
     strategy: "jwt",
   },
   callbacks: {
-    // @ts-ignore
     async jwt({ token, user }) {
       /* Step 1: update the token based on the user object */
       if (user) {
@@ -72,7 +70,6 @@ export const authOptions = {
       return token;
     },
 
-    // @ts-ignore
     session({ session, token }) {
       /* Step 2: update the session.user based on the token object */
       if (token && session.user) {
@@ -87,7 +84,6 @@ export const authOptions = {
   },
 };
 
-// @ts-ignore
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
