@@ -28,7 +28,14 @@ export default function HeroSection() {
             Serenity&nbsp;and&nbsp;Sophistication
           </h3>
           <div className="pt-1 md:pt-2 pl-4 md:pl-10">
-            <Link href="/booking">
+            <Link
+              href={{
+                pathname: "/login",
+                query: {
+                  fromBooking: true,
+                },
+              }}
+            >
               <div className="bg-action px-2 py-1 rounded-md cursor-pointer">
                 <h3 className="text-black text-sm md:text-lg font-semibold">
                   Book Now
