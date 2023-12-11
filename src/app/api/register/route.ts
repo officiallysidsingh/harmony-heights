@@ -18,11 +18,6 @@ export async function POST(req: Request) {
   const { name, email, password } = await req.json();
 
   try {
-    // Check if all fields are filled
-    if (!name || !email || !password) {
-      throw new Error("Please fill all the fields!");
-    }
-
     // Check if the user already exists
     const existUser = await getDocs(
       query(

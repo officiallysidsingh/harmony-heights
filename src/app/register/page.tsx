@@ -34,6 +34,13 @@ export default function Signup() {
     // Loading State
     const toastId = toast.loading("Loading....");
 
+    if (!name || !email || !password) {
+      toast.error("Please fill all the fields", {
+        id: toastId,
+      });
+      return;
+    }
+
     const res = await axios
       .post("/api/register", {
         name,
