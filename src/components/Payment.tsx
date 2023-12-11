@@ -114,7 +114,7 @@ export default function Payment({
                   </div>
                   <div>
                     <Text color="emerald">Total Cost</Text>
-                    <Metric color="lime">
+                    <Metric color="emerald">
                       &#8377;{" "}
                       {totalDays * (roomType === "deluxe" ? 23000 : 29000)}
                     </Metric>
