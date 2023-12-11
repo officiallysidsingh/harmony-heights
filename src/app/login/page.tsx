@@ -19,7 +19,7 @@ import { toast } from "sonner";
 // Font Import
 import { parisienne } from "@/ui/fonts";
 
-export default function Login({ }) {
+export default function Login({}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -63,7 +63,7 @@ export default function Login({ }) {
       // If request coming via booking page
       const fromBooking: any = searchParams.get("fromBooking");
       if (fromBooking === "true") {
-        router.push("/payment");
+        router.push("/booking");
       } else {
         router.push("/redirect");
       }
