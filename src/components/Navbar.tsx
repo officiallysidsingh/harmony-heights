@@ -42,16 +42,17 @@ export default function Navbar({ buttonType }: { buttonType: string }) {
 
   return (
     <div
-      className={`z-50 w-full text-slate-100 transition-all ease-in-out duration-500 ${buttonType === "Login"
+      className={`z-50 w-full text-slate-100 transition-all ease-in-out duration-500 ${
+        buttonType === "Login"
           ? show === "top"
             ? "fixed"
             : show === "show"
-              ? "fixed backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black"
-              : "fixed -translate-y-20"
+            ? "fixed backdrop-filter backdrop-blur-sm bg-opacity-50 bg-black"
+            : "fixed -translate-y-20"
           : show === "top"
-            ? "sticky backdrop-filter backdrop-blur-lg bg-opacity-90 bg-black"
-            : ""
-        } `}
+          ? "sticky backdrop-filter backdrop-blur-lg bg-opacity-90 bg-black"
+          : ""
+      } `}
     >
       <div className="flex justify-between items-center pt-2 pb-1 px-6 md:px-12">
         <div className={`flex flex-col ${ephesis.className} antialiased`}>
