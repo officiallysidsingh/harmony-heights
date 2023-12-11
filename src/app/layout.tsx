@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-w-[400px]">
+      <body className="min-w-[450px]">
         <Toaster
           richColors
           position="top-center"
