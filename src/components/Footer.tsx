@@ -6,7 +6,7 @@ import { courgette } from "@/ui/fonts";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-center bg-[#7287fd] py-5 gap-1">
+    <footer className="bottom-0 w-full flex flex-col justify-center items-center bg-[#7287fd] py-5 gap-1">
       <div
         className={`flex text-3xl font-bold ${courgette.className} antialiased`}
       >

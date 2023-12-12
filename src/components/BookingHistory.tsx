@@ -6,7 +6,7 @@ import { Card, Flex, Metric, Subtitle, Text, Title } from "@tremor/react";
 
 export default function BookingHistory({ adminData }: { adminData: any }) {
   return (
-    <div className="mx-auto w-[96%] flex flex-col px-3 py-5 border-4 border-teal-300 rounded-2xl">
+    <div className="mx-auto w-[96%] flex flex-col px-3 py-5 border-4 border-teal-300 rounded-2xl mb-5">
       <h1
         className={`${parisienne.className} antialiased text-2xl md:text-6xl text-purple-700`}
       >
