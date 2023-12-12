@@ -25,7 +25,6 @@ export default function RootLayout({
             style: {
               boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.25)",
             },
-            duration: 3000,
           }}
         />
         <AuthProvider>{children}</AuthProvider>
