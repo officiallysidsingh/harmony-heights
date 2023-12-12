@@ -10,7 +10,7 @@ import { getDocs, collection, limit, query, where } from "firebase/firestore";
 // Auth Import
 import bcrypt from "bcrypt";
 
-export const authOptions = {
+const authOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
