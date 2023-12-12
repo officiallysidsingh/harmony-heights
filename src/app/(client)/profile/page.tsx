@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 // Component Import
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 // Next Auth Import
 import { useSession } from "next-auth/react";
@@ -103,6 +104,7 @@ export default function Profile() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

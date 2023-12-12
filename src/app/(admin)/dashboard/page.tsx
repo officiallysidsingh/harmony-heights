@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import HotelData from "@/components/HotelData";
 import RegisteredUserData from "@/components/RegisteredUserData";
 import BookingHistory from "@/components/BookingHistory";
+import Footer from "@/components/Footer";
 
 // Next Auth Import
 import { useSession } from "next-auth/react";
@@ -52,6 +53,7 @@ export default function Dashboard() {
         <RegisteredUserData adminData={adminData} />
         <BookingHistory adminData={adminData} />
       </div>
+      <Footer />
     </>
   );
 }

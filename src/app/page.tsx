@@ -11,7 +11,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <RoomDesc />
+      <Footer />
     </div>
   );
 }
-// <Footer />
