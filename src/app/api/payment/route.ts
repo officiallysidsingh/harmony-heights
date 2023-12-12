@@ -22,15 +22,32 @@ export async function POST(req: Request) {
       throw new Error("An Unexpected Error Occurred!");
     }
 
-    const docSnap: any = await getDoc(
-      doc(database, "hotelData", roomType + "Availability"),
+    // Fetching availability data
+    const availabilityDocSnap: any = await getDoc(
+      doc(database, "hotelData", `${roomType}Availability`),
     );
 
-    let qty = docSnap.data().qty;
+    // Updating availability data
+    let qty = availabilityDocSnap.data().qty;
     qty--;
 
+    // Storing availability data
     await setDoc(doc(database, "hotelData", `${roomType}Availability`), {
       qty,
+    });
+
+    // Fetching revenue data
+    const revenueDocSnap: any = await getDoc(
+      doc(database, "hotelData", "totalRevenue"),
+    );
+
+    // Updating revenue data
+    let revenue = revenueDocSnap.data().qty;
+    revenue = revenue + totalPrice;
+
+    // Storing revenue data
+    await setDoc(doc(database, "hotelData", `totalRevenue`), {
+      qty: revenue,
     });
 
     return NextResponse.json({
