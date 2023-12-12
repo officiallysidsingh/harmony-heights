@@ -21,12 +21,14 @@ export async function POST(req: Request) {
       ),
     );
 
+    // Check if there are no such document
     if (docSnap.empty) {
       throw new Error("No booking history found!");
     }
 
+    // If document exists
+    // Store it in userHistory array
     let userHistory: any[] = [];
-
     docSnap.forEach((doc) => userHistory.push(doc.data()));
 
     return NextResponse.json({
