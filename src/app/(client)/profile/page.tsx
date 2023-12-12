@@ -17,6 +17,9 @@ import axios from "axios";
 // Tremor Import
 import { Card, Flex, Text, Title } from "@tremor/react";
 
+// Notification Toast Import
+import { toast } from "sonner";
+
 export default function Profile() {
   const [userHistory, setUserHistory] = useState<any[]>();
 
@@ -30,6 +33,10 @@ export default function Profile() {
         })
         .then((res) => res.data);
       setUserHistory(res.userHistory);
+
+      if (res.status !== "OK") {
+        toast.error("No Booking History Found");
+      }
     }
     fetchData();
   }, []);
