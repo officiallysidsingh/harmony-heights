@@ -62,8 +62,8 @@ export default function Profile() {
             Booking History
           </h1>
         </div>
-        {userHistory?.map((data: any) => (
-          <div className="mx-auto w-5/6 md:w-2/3 md:ml-4 ">
+        {userHistory?.map((data: any, value: number) => (
+          <div className="mx-auto w-5/6 md:w-2/3 md:ml-4" key={value}>
             <Card className="max-w-xl mb-5">
               <Flex>
                 <div>

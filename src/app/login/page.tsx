@@ -19,7 +19,7 @@ import { toast } from "sonner";
 // Font Import
 import { parisienne } from "@/ui/fonts";
 
-export default function Login({}) {
+export default function Login({ }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -112,7 +112,7 @@ export default function Login({}) {
               </div>
             </form>
             <h3 className="flex justify-center pt-5 gap-1 text-base md:text-xl text-slate-50">
-              Don't have an account?
+              Don&#39;t have an account?
               <Link href="/register" className="text-blue-400">
                 {" "}
                 Register

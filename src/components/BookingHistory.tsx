@@ -21,8 +21,8 @@ export default function BookingHistory({ adminData }: { adminData: any }) {
             <Subtitle color="emerald">Total Price</Subtitle>
           </Flex>
         </Card>
-        {adminData?.userHistory?.map((data: any) => (
-          <Card className="max-w-6xl mx-auto">
+        {adminData?.userHistory?.map((data: any, value: number) => (
+          <Card className="max-w-6xl mx-auto" key={value}>
             <Flex>
               <Title>
                 {data.roomType[0].toUpperCase()}

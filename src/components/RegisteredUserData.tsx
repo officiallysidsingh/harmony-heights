@@ -19,8 +19,8 @@ export default function RegisteredUserData({ adminData }: { adminData: any }) {
             <Title>Role</Title>
           </Flex>
         </Card>
-        {adminData?.userCredentials?.map((data: any) => (
-          <Card className="max-w-6xl mx-auto">
+        {adminData?.userCredentials?.map((data: any, value: number) => (
+          <Card className="max-w-6xl mx-auto" key={value}>
             <Flex>
               <Title>{data.name}</Title>
               <Title>

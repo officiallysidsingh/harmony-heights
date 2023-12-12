@@ -13,7 +13,7 @@ import { DateRangePickerValue } from "@tremor/react";
 import Payment from "@/components/Payment";
 import Availability from "@/components/Availability";
 
-export default function booking() {
+export default function Booking() {
   const [paymentScreen, setPaymentScreen] = useState(false);
   const [roomType, setRoomType] = useState("");
   const [dateRange, setDateRange] = useState<DateRangePickerValue>();
